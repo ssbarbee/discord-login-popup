@@ -29,7 +29,7 @@ After login, the popup window will close and the token will be passed to the par
 As integrator, you need to provide the client id, redirect url, and scopes.
 You also need to provide a callback function that will be called when the popup window is closed.
 
-You must host a page that will open the popup window. This page must inject the `discord-login-token-detector.js` script from this repository.
+You must host a page that will open the popup window. This page must inject the `static/discord-login-token-detector.js` script from this repository.
 Feel free to download the script and host it yourself.
 
 Here’s a basic example of how to use the discord-login-popup library:
@@ -41,7 +41,7 @@ import { discordLoginPopup } from 'discord-login-popup';
 // https://discord.com/developers/applications
 const clientId = 'YOUR_DISCORD_CLIENT_ID';
 // Redirect URL must be the same as the one you set in the Discord Developer Portal
-// This is the URL for a page that will open in the popup. This page must inject the discord-login-token-detector.js script
+// This is the URL for a page that will open in the popup. This page must inject the `static/discord-login-token-detector.js` script from this repository
 const redirectUri = 'YOUR_REDIRECT_URI';
 const scopes = 'identify';
 

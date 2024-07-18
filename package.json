@@ -1,14 +1,15 @@
 {
   "name": "discord-login-popup",
   "version": "1.0.0",
-  "main": "dist/discord-login-popup.umd.js",
-  "module": "dist/discord-login-popup.es.js",
+  "main": "dist/index.umd.js",
+  "module": "dist/index.es.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "vite build"
   },
   "devDependencies": {
     "typescript": "5.5.3",
-    "vite": "5.3.4"
+    "vite": "5.3.4",
+    "vite-plugin-dts": "^4.0.0-beta.0"
   }
 }

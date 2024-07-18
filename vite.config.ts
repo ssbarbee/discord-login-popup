@@ -1,17 +1,14 @@
 import { defineConfig } from 'vite';
+import dts from 'vite-plugin-dts'
 
 export default defineConfig({
     build: {
         lib: {
             entry: 'src/index.ts',
             name: 'DiscordLoginPopup',
-            fileName: (format) => `discord-login-popup.${format}.js`,
-        },
-        rollupOptions: {
-            external: [],
-            output: {
-                globals: {},
-            },
+            formats: ['es', 'umd'],
+            fileName: (format) => `index.${format}.js`,
         },
     },
+    plugins: [dts()]
 });
