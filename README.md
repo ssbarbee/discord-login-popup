@@ -42,6 +42,7 @@ import { discordLoginPopup } from 'discord-login-popup';
 const clientId = 'YOUR_DISCORD_CLIENT_ID';
 // Redirect URL must be the same as the one you set in the Discord Developer Portal
 // This is the URL for a page that will open in the popup. This page must inject the `static/discord-login-token-detector.js` script from this repository
+// Checkout the static/discord-login.html file for an example of how to use this page
 const redirectUri = 'YOUR_REDIRECT_URI';
 const scopes = 'identify';
 
