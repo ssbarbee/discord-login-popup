@@ -22,22 +22,39 @@ yarn add discord-login-popup
 ```
 
 # Usage
+Idea: Open a popup window with the discord login page. 
+The popup window will open and close automatically upon login. 
+After login, the popup window will close and the token will be passed to the parent window.
+
+As integrator, you need to provide the client id, redirect url, and scopes.
+You also need to provide a callback function that will be called when the popup window is closed.
+
+You must host a page that will open the popup window. This page must inject the `discord-login-token-detector.js` script from this repository.
+Feel free to download the script and host it yourself.
+
 Here’s a basic example of how to use the discord-login-popup library:
 
 ```typescript
-import { DiscordLogin } from 'discord-login-popup';
+import { discordLoginPopup } from 'discord-login-popup';
 
+// Get your client ID from the Discord Developer Portal
+// https://discord.com/developers/applications
 const clientId = 'YOUR_DISCORD_CLIENT_ID';
+// Redirect URL must be the same as the one you set in the Discord Developer Portal
+// This is the URL for a page that will open in the popup. This page must inject the discord-login-token-detector.js script
 const redirectUri = 'YOUR_REDIRECT_URI';
-const scopes = ['identify', 'email'];
+const scopes = 'identify';
 
-const login = async () => {
-  try {
-    const result = await DiscordLogin(clientId, redirectUri, scopes);
-    console.log('User Info:', result);
-  } catch (error) {
-    console.error('Login failed:', error);
-  }
+const login = () => {
+    discordLoginPopup({
+        discordAppClientId: clientId,
+        redirectUrl: redirectUri,
+        scopes: scopes,
+        onStart: () => console.log('Login started'),
+        onError: (error) => console.error('Login failed', error),
+        onSuccess: (data) => console.log('Login successful', data),
+        onClose: () => console.log('Popup closed'),
+    });
 };
 
 // Call the login function on a button click or any other event
@@ -55,4 +72,4 @@ For more details and advanced usage, refer to the official documentation.
 Contributions are welcome! If you have any ideas, suggestions, or issues, please open an issue or submit a pull request.
 
 # License
-This project is licensed under the MIT License. See the LICENSE file for more details.
+This project is licensed under the MIT License. See the LICENSE file for more [details](https://github.com/discord-login-popup/blob/main/LICENSE).
