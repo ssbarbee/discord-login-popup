@@ -30,7 +30,11 @@ export const ReactIntegration = ({
   const loginWithDiscord = () => {
     discordLoginPopup({
       discordAppClientId,
-      onClose: () => {},
+      onClose: () => {
+        setLoading(false);
+        setToken('');
+        setError('');
+      },
       onError: data => {
         setToken('');
         setError(data.error);
@@ -38,6 +42,7 @@ export const ReactIntegration = ({
       },
       onStart: () => {
         setLoading(true);
+        setError('');
       },
       onSuccess: data => {
         setToken(data.token);
@@ -50,18 +55,22 @@ export const ReactIntegration = ({
   };
 
   return (
-    <div className="storybook-button-container">
-      <button className="storybook-button" onClick={loginWithDiscord}>
+    <div className="container">
+      <button className="button" onClick={loginWithDiscord}>
+        <DiscordIcon />
         {loading ? 'Loading...' : ''}
-        {!loading && (
-          <React.Fragment>
-            <DiscordIcon />
-            Login with Discord
-          </React.Fragment>
-        )}
+        {!loading ? 'Login Discord' : ''}
       </button>
-      {error && <div className="storybook-error">{error}</div>}
-      {token && <div className="storybook-token">{token}</div>}
+      {error && (
+        <div className="error">
+          <p>{error}</p>
+        </div>
+      )}
+      {token && (
+        <div className="token">
+          <p>{token}</p>
+        </div>
+      )}
     </div>
   );
 };

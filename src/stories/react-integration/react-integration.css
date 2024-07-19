@@ -1,14 +1,54 @@
-.storybook-button {
-  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+:root {
+  --font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --brand-500: hsl(235 calc( 1 * 85.6%) 64.7% / 1);
+  --brand-560: hsl(235 calc( 1 * 51.4%) 52.4% / 1);
+  --white-500: hsl(0 calc( 1 * 0%) 100% / 1);
+  --red-345: hsl(358 calc( 1 * 92.9%) 72.4% / 1);
+  --red-660: hsl(359 calc( 1 * 65.1%) 21.4% / 1);
+  --primary-330: hsl(215 calc( 1 * 8.8%) 73.3% / 1);
+  --primary-660: hsl(228 calc( 1 * 6.7%) 14.7% / 1);
+}
+
+.button {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-family);
+  font-size: 16px;
   font-weight: 700;
   border: 0;
   border-radius: 3em;
   cursor: pointer;
-  display: inline-block;
   line-height: 1;
-  font-size: 16px;
   padding: 12px 24px;
-  color: #333;
-  background-color: transparent;
+  color: var(--white-500);
+  background-color: var(--brand-500);
   box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
+  transition: background-color 0.2s ease-in-out;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: var(--brand-560);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.error {
+  color: var(--red-345);
+  padding: 4px 8px;
+  font-size: 12px;
+}
+
+.token {
+  color: var(--primary-330);
+  padding: 4px 8px;
+  font-size: 12px;
 }

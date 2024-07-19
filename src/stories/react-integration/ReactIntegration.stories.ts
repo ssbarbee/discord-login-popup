@@ -18,7 +18,7 @@ type Story = StoryObj<typeof ReactIntegration>;
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Default: Story = {
   args: {
-    discordAppClientId: '1260148226250772610',
+    discordAppClientId: '1263854212983296073',
     redirectUrl: `${window.location.origin}/discord-login.html`,
     scopes: 'identify',
   },
