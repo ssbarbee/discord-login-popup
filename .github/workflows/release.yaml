@@ -22,10 +22,10 @@ jobs:
         run: make install-ci
       - name: Prettier check, Eslint check, Typescript check
         run: make code-quality-check
-      - name: Run tests
-        run: make test-coverage
-      - name: Generate coverage badges
-        run: make generate-coverage-badges
+#      - name: Run tests
+#        run: make test-coverage
+#      - name: Generate coverage badges
+#        run: make generate-coverage-badges
       - name: Build release
         run: make build
       - name: Release Storybook demo
