@@ -62,12 +62,10 @@ const login = () => {
 login();
 ```
 
-# Demo
-To see a live demo of the discord-login-popup in action, check out the Demo Page.
+# Demo 😈
+To see a live demo of the `discord-login-popup` in action, check out the Demo Page.
 
-The demo demonstrates how to set up and use the library in a real-world scenario, providing a clear example of how to implement Discord OAuth2 authentication in your own web applications.
-
-For more details and advanced usage, refer to the official documentation.
+Hosted [storybook](https://ssbarbee.github.io/discord-login-popup/)
 
 # Contributing
 Contributions are welcome! If you have any ideas, suggestions, or issues, please open an issue or submit a pull request.
