@@ -48,6 +48,7 @@ export const ReactIntegration = ({
       scopes,
     });
   };
+
   return (
     <div className="storybook-button-container">
       <button className="storybook-button" onClick={loginWithDiscord}>
