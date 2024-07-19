@@ -27,6 +27,8 @@
     "@chromatic-com/storybook": "^1.6.1",
     "@commitlint/cli": "18.4.3",
     "@commitlint/config-conventional": "18.4.3",
+    "@semantic-release/git": "10.0.1",
+    "@semantic-release/npm": "9.0.1",
     "@storybook/addon-essentials": "^8.2.4",
     "@storybook/addon-interactions": "^8.2.4",
     "@storybook/addon-links": "^8.2.4",
