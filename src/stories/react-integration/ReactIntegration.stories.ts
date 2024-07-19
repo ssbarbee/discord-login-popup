@@ -19,7 +19,7 @@ type Story = StoryObj<typeof ReactIntegration>;
 export const Default: Story = {
   args: {
     discordAppClientId: '1260148226250772610',
-    redirectUrl: 'http://localhost:6006/discord-login.html',
+    redirectUrl: `${window.location.origin}/discord-login.html`,
     scopes: 'identify',
   },
 };
