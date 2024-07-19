@@ -132,3 +132,4 @@ dist
 *storybook.log
 .idea
 .DS_Store
+/storybook-static/
