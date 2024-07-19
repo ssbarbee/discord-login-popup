@@ -7,7 +7,11 @@
   "scripts": {
     "build": "vite build",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "lint:check": "eslint 'src/**/*.{ts,tsx}'",
+    "lint:fix": "eslint --quiet --fix 'src/**/*.{ts,tsx}'",
+    "prettier:check": "prettier --log-level silent --check './src/**/*.{ts,tsx}'",
+    "prettier:fix": "prettier --log-level silent --write './src/**/*.{ts,tsx}'"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^1.6.1",
@@ -19,6 +23,19 @@
     "@storybook/react": "^8.2.4",
     "@storybook/react-vite": "^8.2.4",
     "@storybook/test": "^8.2.4",
+    "@typescript-eslint/eslint-plugin": "6.10.0",
+    "eslint": "8.56.0",
+    "eslint-config-airbnb": "19.0.4",
+    "eslint-config-next": "14.0.1",
+    "eslint-config-prettier": "9.0.0",
+    "eslint-plugin-prettier": "5.0.0",
+    "eslint-plugin-react": "7.33.2",
+    "eslint-plugin-simple-import-sort": "10.0.0",
+    "eslint-plugin-sort-keys-fix": "1.1.2",
+    "eslint-plugin-storybook": "^0.8.0",
+    "eslint-plugin-typescript-sort-keys": "3.2.0",
+    "eslint-plugin-unused-imports": "3.0.0",
+    "prettier": "3.0.2",
     "storybook": "^8.2.4",
     "typescript": "5.5.3",
     "vite": "5.3.4",

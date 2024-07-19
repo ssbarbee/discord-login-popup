@@ -1,0 +1,152 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "jest": true
+  },
+  "extends": [
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "plugin:import/recommended",
+    "plugin:import/typescript",
+    "prettier",
+    "plugin:typescript-sort-keys/recommended",
+    "plugin:storybook/recommended",
+    "eslint:recommended",
+    "plugin:react/recommended"
+  ],
+  "ignorePatterns": [
+    "src/types/*.d.ts"
+  ],
+  "overrides": [
+    {
+      "files": ["**/*.{tsx,ts}"], // This targets all .tsx and .ts files in the project
+      "rules": {
+        "import/no-default-export": "error"
+      }
+    },
+    {
+      "files": ["**/*stories.{tsx,ts}"],
+      "rules": {
+        "import/no-default-export": "off"
+      }
+    }
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "project": [
+      "./tsconfig.json"
+    ]
+  },
+  "plugins": [
+    "unused-imports",
+    "simple-import-sort",
+    "sort-keys-fix",
+    "typescript-sort-keys"
+  ],
+  "rules": {
+    "@typescript-eslint/indent": "off",
+    "@typescript-eslint/no-explicit-any": "error",
+    "@typescript-eslint/no-floating-promises": "warn",
+    "@typescript-eslint/no-shadow": [
+      "error"
+    ],
+    "@typescript-eslint/no-unused-vars": "error",
+    "@typescript-eslint/no-use-before-define": [
+      "error"
+    ],
+    "eqeqeq": "error",
+    "import/extensions": "off",
+    "import/no-default-export": "error",
+    "import/no-extraneous-dependencies": "off",
+    "import/no-unresolved": "off",
+    "import/prefer-default-export": "off",
+    "no-console": "error",
+    "no-restricted-imports": [
+      "error",
+      {
+        "patterns": [
+          {
+            "group": [
+              "**/dist/**"
+            ],
+            "message": "Don't import types/modules from 'dist' directories!"
+          },
+          {
+            "group": [
+              "src/**"
+            ],
+            "message": "Don't import from 'src' directory! Use relative paths instead!"
+          }
+        ]
+      }
+    ],
+    "no-shadow": "off",
+    "no-unused-vars": "off",
+    "no-use-before-define": "off",
+    "prefer-template": "error",
+    "react/forbid-component-props": [
+      "error",
+      {
+        "forbid": [
+          {
+            "message": "Use data-testid instead.",
+            "propName": "data-testId"
+          }
+        ]
+      }
+    ],
+    "react/jsx-filename-extension": [
+      "error",
+      {
+        "extensions": [
+          ".ts",
+          ".tsx"
+        ]
+      }
+    ],
+    "react/jsx-key": [
+      "error"
+    ],
+    "react/jsx-props-no-spreading": "off",
+    "react/jsx-sort-props": [
+      "error",
+      {
+        "callbacksLast": true,
+        "ignoreCase": true,
+        "noSortAlphabetically": false,
+        "reservedFirst": true,
+        "shorthandFirst": false,
+        "shorthandLast": true
+      }
+    ],
+    "react/react-in-jsx-scope": "off",
+    "simple-import-sort/exports": "error",
+    "simple-import-sort/imports": "error",
+    "unused-imports/no-unused-imports-ts": "error",
+    "no-debugger": "error",
+    "sort-keys-fix/sort-keys-fix": [
+      "error",
+      "asc",
+      {
+        "caseSensitive": true,
+        "natural": false
+      }
+    ],
+    "no-multiple-empty-lines": [
+      "error",
+      {
+        "max": 1,
+        "maxEOF": 1
+      }
+    ],
+    "no-useless-return": "error",
+    "consistent-return": "error",
+    "react/display-name": "off",
+    "@typescript-eslint/no-redundant-type-constituents": "off",
+    "react/jsx-boolean-value": ["error", "always"],
+    "object-shorthand": ["error", "properties"]
+  }
+}
