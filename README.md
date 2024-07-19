@@ -71,4 +71,4 @@ Hosted [storybook](https://ssbarbee.github.io/discord-login-popup/)
 Contributions are welcome! If you have any ideas, suggestions, or issues, please open an issue or submit a pull request.
 
 # License
-This project is licensed under the MIT License. See the LICENSE file for more [details](https://github.com/discord-login-popup/blob/main/LICENSE).
+This project is licensed under the MIT License. See the LICENSE file for more [details](https://github.com/ssbarbee/discord-login-popup/blob/main/LICENSE).
