@@ -15,6 +15,8 @@
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^1.6.1",
+    "@commitlint/cli": "18.4.3",
+    "@commitlint/config-conventional": "18.4.3",
     "@storybook/addon-essentials": "^8.2.4",
     "@storybook/addon-interactions": "^8.2.4",
     "@storybook/addon-links": "^8.2.4",
@@ -24,6 +26,7 @@
     "@storybook/react-vite": "^8.2.4",
     "@storybook/test": "^8.2.4",
     "@typescript-eslint/eslint-plugin": "6.10.0",
+    "dpdm": "3.11.0",
     "eslint": "8.56.0",
     "eslint-config-airbnb": "19.0.4",
     "eslint-config-next": "14.0.1",
@@ -35,10 +38,104 @@
     "eslint-plugin-storybook": "^0.8.0",
     "eslint-plugin-typescript-sort-keys": "3.2.0",
     "eslint-plugin-unused-imports": "3.0.0",
+    "gh-pages": "5.0.0",
+    "husky": "8.0.3",
+    "is-ci": "3.0.1",
     "prettier": "3.0.2",
+    "semantic-release": "19.0.5",
+    "semantic-release-cli": "5.4.4",
     "storybook": "^8.2.4",
     "typescript": "5.5.3",
     "vite": "5.3.4",
     "vite-plugin-dts": "^4.0.0-beta.0"
-  }
+  },
+  "resolutions": {
+    "underscore.string@~2.2.0rc": "2.2.1"
+  },
+  "release": {
+    "branches": [
+      "main"
+    ],
+    "plugins": [
+      [
+        "@semantic-release/commit-analyzer",
+        {
+          "preset": "angular",
+          "releaseRules": [
+            {
+              "type": "build",
+              "release": "patch"
+            },
+            {
+              "type": "chore",
+              "release": "patch"
+            },
+            {
+              "type": "ci",
+              "release": "patch"
+            },
+            {
+              "type": "docs",
+              "release": "patch"
+            },
+            {
+              "type": "feat",
+              "release": "minor"
+            },
+            {
+              "type": "fix",
+              "release": "patch"
+            },
+            {
+              "type": "perf",
+              "release": "patch"
+            },
+            {
+              "type": "refactor",
+              "release": "patch"
+            },
+            {
+              "type": "revert",
+              "release": "patch"
+            },
+            {
+              "type": "style",
+              "release": "patch"
+            },
+            {
+              "type": "test",
+              "release": "patch"
+            },
+            {
+              "type": "breaking",
+              "release": "major"
+            }
+          ],
+          "parserOpts": {
+            "noteKeywords": [
+              "BREAKING CHANGE",
+              "BREAKING CHANGES"
+            ]
+          }
+        }
+      ],
+      "@semantic-release/npm",
+      "@semantic-release/release-notes-generator",
+      [
+        "@semantic-release/git",
+        {
+          "assets": [
+            "package.json",
+            "README.md"
+          ],
+          "message": "chore: Release ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+        }
+      ]
+    ]
+  },
+  "engines": {
+    "node": ">= 16.17.0",
+    "npm": "please-use-yarn"
+  },
+  "packageManager": "yarn@4.3.1"
 }
