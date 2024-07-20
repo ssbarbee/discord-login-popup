@@ -41,7 +41,7 @@ Open a popup window with the discord login page. Upon login, the popup window wi
 3) You must host a page that will open inside popup window after discord redirect. This page must inject the [discord-login-token-detector.js](https://github.com/ssbarbee/discord-login-popup/blob/main/static/discord-login-token-detector.js) script from this repository.
 Feel free to download the script and host it yourself. Example: [discord-login.html](https://github.com/ssbarbee/discord-login-popup/blob/main/static/discord-login.html)
 
-## Code Example in Typescript 📦
+## Usage in Typescript 📦
 
 Here’s a basic example of how to use the `discord-login-popup` package in a React application:
 
@@ -79,9 +79,14 @@ const login = () => {
 login();
 ```
 
-## Code Example in React 📦
+## Usage in React 📦
 
 Checkout the [React Integration Story](https://github.com/ssbarbee/discord-login-popup/blob/85a3559b2590cdf282b21b523b1199374f0b0d10/src/stories/react-integration/ReactIntegration.tsx) for a live example of how to use the `discord-login-popup` package in a React application.
+
+## Usage in NextJS 📦
+
+Checkout this [NextJS repo]([https://github.com/ssbarbee/next-discord-popup-login) for an example of how to use the `discord-login-popup` package inside a NextJS application.
+
 
 # Contributing 🤝
 Contributions are welcome! If you have any ideas, suggestions, or issues, please open an issue or submit a pull request.
