@@ -21,6 +21,11 @@ npm install discord-login-popup
 yarn add discord-login-popup
 ```
 
+# Demo 😈
+To see a live demo of the `discord-login-popup` in action, check out the Demo Page.
+
+Hosted [storybook](https://ssbarbee.github.io/discord-login-popup/)
+
 # Usage 🎉 
 
 ## Requirements 🎓
@@ -41,7 +46,7 @@ Feel free to download the script and host it yourself. Example: [discord-login.h
 Here’s a basic example of how to use the `discord-login-popup` package in a React application:
 
 ```typescript
-import { discordLoginPopup } from 'discord-login-popup';
+import { discordLoginPopup, OnSuccessTokenParams } from 'discord-login-popup';
 
 // Get your client ID from the Discord Developer Portal
 // https://discord.com/developers/applications
@@ -51,15 +56,21 @@ const clientId = 'YOUR_DISCORD_CLIENT_ID';
 // Checkout the static/discord-login.html file for an example of how to use this page
 const redirectUri = 'YOUR_REDIRECT_URI';
 const scopes = 'identify';
+// The response type can be either 'token' or 'code'
+// If you choose 'token', the popup will return the access token
+// If you choose 'code', the popup will return the code
+// Make sure you cast the data to the correct type OnSuccessTokenParams or OnSuccessCodeParams
+const responseType = 'token';
 
 const login = () => {
     discordLoginPopup({
         discordAppClientId: clientId,
         redirectUrl: redirectUri,
         scopes: scopes,
+        responseType: responseType,
         onStart: () => console.log('Login started'),
-        onError: (data) => console.error('Login failed. Data contains error message', data.error),
-        onSuccess: (data) => console.log('Login successful. Data contains token', data.token),
+        onError: (data) => console.error('Login failed. Reason:', data.error_description, data.error),
+        onSuccess: (data) => console.log('Login successful. Data:', data as OnSuccessTokenParams),
         onClose: () => console.log('Popup closed'),
     });
 };
@@ -71,11 +82,6 @@ login();
 ## Code Example in React 📦
 
 Checkout the [React Integration Story](https://github.com/ssbarbee/discord-login-popup/blob/85a3559b2590cdf282b21b523b1199374f0b0d10/src/stories/react-integration/ReactIntegration.tsx) for a live example of how to use the `discord-login-popup` package in a React application.
-
-# Demo 😈
-To see a live demo of the `discord-login-popup` in action, check out the Demo Page.
-
-Hosted [storybook](https://ssbarbee.github.io/discord-login-popup/)
 
 # Contributing 🤝
 Contributions are welcome! If you have any ideas, suggestions, or issues, please open an issue or submit a pull request.

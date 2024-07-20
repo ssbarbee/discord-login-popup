@@ -45,10 +45,31 @@
   color: var(--red-345);
   padding: 4px 8px;
   font-size: 12px;
+  font-family: var(--font-family);
 }
 
 .token {
   color: var(--primary-330);
   padding: 4px 8px;
   font-size: 12px;
+  font-family: var(--font-family);
+}
+
+.heading {
+  color: var(--white-500);
+  padding: 4px 8px;
+  font-size: 32px;
+  font-family: var(--font-family);
+}
+
+.heading i {
+  text-decoration: underline;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
 }

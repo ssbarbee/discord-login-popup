@@ -20,6 +20,7 @@ export const Default: Story = {
   args: {
     discordAppClientId: '1263854212983296073',
     redirectUrl: `${window.location.origin}/discord-login.html`,
+    responseType: 'token',
     scopes: 'identify',
   },
 };
