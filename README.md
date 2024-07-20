@@ -83,9 +83,9 @@ login();
 
 Checkout the [React Integration Story](https://github.com/ssbarbee/discord-login-popup/blob/85a3559b2590cdf282b21b523b1199374f0b0d10/src/stories/react-integration/ReactIntegration.tsx) for a live example of how to use the `discord-login-popup` package in a React application.
 
-## Usage in NextJS 📦
+## Usage in Next.js 📦
 
-Checkout this [NextJS repo]([https://github.com/ssbarbee/next-discord-popup-login) for an example of how to use the `discord-login-popup` package inside a NextJS application.
+Checkout this [Next.js repo](https://github.com/ssbarbee/next-discord-popup-login) for an example of how to use the `discord-login-popup` package inside a NextJS application.
 
 
 # Contributing 🤝
