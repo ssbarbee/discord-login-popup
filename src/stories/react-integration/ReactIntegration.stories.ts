@@ -19,7 +19,10 @@ type Story = StoryObj<typeof ReactIntegration>;
 export const Default: Story = {
   args: {
     discordAppClientId: '1263854212983296073',
-    redirectUrl: `${window.location.origin}/discord-login.html`,
+    redirectUrl:
+      window.location.origin.indexOf('localhost') !== -1
+        ? `${window.location.origin}/discord-login.html`
+        : `${window.location.origin}/discord-login-popup/discord-login.html`,
     responseType: 'token',
     scopes: 'identify',
   },
