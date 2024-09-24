@@ -143,7 +143,7 @@
             "package.json",
             "README.md"
           ],
-          "message": "chore: Release ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+          "message": "chore: Release ${nextRelease.version} \n\n${nextRelease.notes}"
         }
       ]
     ]
