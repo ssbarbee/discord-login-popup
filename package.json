@@ -19,7 +19,7 @@
     "lint:fix": "eslint --fix 'src/**/*.{ts,tsx}'",
     "prettier:check": "prettier --check './src/**/*.{ts,tsx}' './.storybook/**/*.ts'",
     "prettier:fix": "prettier --write './src/**/*.{ts,tsx}' './.storybook/**/*.ts'",
-    "prepare": "is-ci || husky install",
+    "prepare": "is-ci || husky",
     "release": "semantic-release",
     "code-quality:check": "npx concurrently 'yarn ts:check' 'yarn prettier:check' 'yarn lint:check --quiet'"
   },
@@ -52,7 +52,7 @@
     "eslint-plugin-typescript-sort-keys": "3.2.0",
     "eslint-plugin-unused-imports": "3.0.0",
     "gh-pages": "5.0.0",
-    "husky": "8.0.3",
+    "husky": "9.1.6",
     "is-ci": "3.0.1",
     "prettier": "3.0.2",
     "react": "^18.2.0",
